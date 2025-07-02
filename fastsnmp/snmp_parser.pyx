@@ -640,7 +640,7 @@ cdef tuple sequence_decode_c(const unsigned char *stream, const size_t stream_le
             objects.append(object_str)
         elif tag == ASN_U_NULL:
             objects.append(None)
-        elif tag == ASN_U_SEQUENCE or tag == ASN_SNMP_RESPONSE or tag == ASN_SNMP_GETBULK:
+        elif tag == ASN_U_SEQUENCE or tag == ASN_SNMP_RESPONSE or tag == ASN_SNMP_GETBULK or tag == ASN_SNMP_TRAP2:
             tmp_list_val, ex = sequence_decode_c(stream_char, length)
             if tmp_list_val is not None:
                 objects.append(tmp_list_val)
